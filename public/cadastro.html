@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="wrap flex-between">
+            <a class="logo" href="/">THE IRON <span>LEGACY</span></a>
+            <a href="login.html" class="link-accent">Já tenho uma conta &rarr;</a>
+        </div>
+    </header>
+
+    <main class="register-page">
+        <section>
+            <p class="eyebrow">THE IRON LEGACY</p>
+            <h1>Faça parte da<br><b>comunidade.</b></h1>
+            <p class="muted">Cadastre seus veículos, encontre peças e negocie dentro da plataforma.</p>
+        </section>
+
+        <section class="panel form">
+            <p class="eyebrow">NOVO CADASTRO</p>
+            <h2>Criar conta</h2>
+
+            <form action="cadastro.html" method="POST">
+                <div class="grid">
+                    <div class="input-container">
+                        <label for="nome">Nome completo</label>
+                        <input id="nome" type="text" name="nome" placeholder="Seu nome" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="telefone">Telefone</label>
+                        <input id="telefone" type="tel" name="telefone" placeholder="(00) 00000-0000" required>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" name="email" placeholder="seu@email.com" required>
+                </div>
+
+                <div class="grid">
+                    <div class="input-container">
+                        <label for="senha">Senha</label>
+                        <input id="senha" type="password" name="senha" placeholder="••••••••" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="confirmar_senha">Confirmar senha</label>
+                        <input id="confirmar_senha" type="password" name="confirmar_senha" placeholder="••••••••" required>
+                    </div>
+                </div>
+
+                <label class="terms">
+                    <input type="checkbox" name="termos" required> Aceito os termos de uso.
+                </label>
+
+                <button type="submit" class="button primary full-width">Criar minha conta</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

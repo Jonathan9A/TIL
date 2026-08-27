@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="auth">
+        <section class="brand">
+            <a class="logo" href="/">THE IRON <span>LEGACY</span></a>
+            <div>
+                <p class="eyebrow">THE IRON LEGACY</p>
+                <h1>Seu clássico.<br><b>Sua história.</b></h1>
+                <p class="muted">Encontre peças, acompanhe seus veículos e negocie com outros apaixonados por clássicos.</p>
+            </div>
+            <p class="muted">&copy; 2026 The Iron Legacy</p>
+        </section>
+
+        <section class="authbox">
+            <a class="back" href="/">&larr; Voltar para o início</a>
+            <p class="eyebrow">ACESSAR CONTA</p>
+            <h2>Bem-vindo de volta</h2>
+            <p class="muted margin-b">Entre com seus dados para continuar.</p>
+
+            <form action="login.html" method="POST">
+                <div class="input-container">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" name="email" placeholder="seu@email.com" required>
+                </div>
+
+                <div class="input-container">
+                    <label for="senha">Senha</label>
+                    <input id="senha" type="password" name="senha" placeholder="Sua senha" required>
+                </div>
+
+                <div class="row">
+                    <label class="terms">
+                        <input type="checkbox" name="lembrar"> Lembrar de mim
+                    </label>
+                    <a href="/recuperar-senha" class="link-accent">Esqueci minha senha</a>
+                </div>
+
+                <button type="submit" class="button primary full-width">Entrar</button>
+            </form>
+
+            <p class="register">Ainda não possui conta? <a href="cadastro.html">Criar conta</a></p>
+        </section>
+    </main>
+</body>
+</html>

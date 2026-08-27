@@ -1,0 +1,1405 @@
+/* ==========================================================================
+   THE IRON LEGACY & SYSTEM - CONSOLIDATED STYLESHEET
+   Combined from all project CSS files
+   ========================================================================== */
+
+/* ==========================================================================
+   1. GLOBAL VARIABLES & RESET
+   ========================================================================== */
+
+:root {
+    --r: #c62828;
+    --bg: #0b0b0b;
+    --card: #151515;
+    --bd: #292929;
+    --muted: #888;
+    --accent-gold: #c99a55;
+    --accent-brown: #a2763f;
+    --bg-light: #f5f3ef;
+    --text-dark: #171717;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f3ef;
+    color: #171717;
+    min-height: 100vh;
+}
+
+/* Dark layout overrides (for Auth and Hero pages using var(--bg)) */
+body.dark-theme,
+body.auth-body {
+    background: var(--bg);
+    color: #eee;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   2. COMMON LAYOUT & NAVIGATION (HEADER, WRAP, LOGO, FOOTER)
+   ========================================================================== */
+
+.wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.header {
+    background: #171717;
+    border-bottom: 1px solid #2b2b2b;
+}
+
+.header .wrap {
+    max-width: 1200px;
+    margin: auto;
+    min-height: 78px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #c99a55;
+}
+
+.logo span.sublogo {
+    display: block;
+    color: var(--r);
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    color: #ddd;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: #c99a55;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.eyebrow {
+    color: #a2763f;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.muted {
+    color: #777;
+    line-height: 1.6;
+}
+
+.heading {
+    padding: 55px 0 30px;
+}
+
+h1 {
+    font-size: 42px;
+    line-height: 1.1;
+    margin-bottom: 12px;
+}
+
+/* Common Form Components & Inputs */
+input,
+select,
+textarea {
+    border: 1px solid #d5d0c8;
+    border-radius: 6px;
+    padding: 13px 14px;
+    background: #fff;
+    color: #222;
+    outline: none;
+    transition: 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #a2763f;
+    box-shadow: 0 0 0 3px rgba(162, 118, 63, 0.10);
+}
+
+.primary,
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 6px;
+    padding: 14px 22px;
+    background: #171717;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+    white-space: nowrap;
+}
+
+.primary:hover,
+.button:hover {
+    background: #a2763f;
+}
+
+.secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 20px;
+    border: 1px solid #171717;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.secondary:hover {
+    background: #171717;
+    color: #fff;
+}
+
+.panel {
+    background: #fff;
+    border: 1px solid #ddd8d0;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* ==========================================================================
+   3. AUTH & REGISTER PAGES (login.html, cadastro.html)
+   ========================================================================== */
+
+.auth,
+.register-page {
+    width: min(1100px, calc(100% - 40px));
+    min-height: 100vh;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.authbox {
+    background: var(--card);
+    border: 1px solid var(--bd);
+    padding: 40px;
+    border-radius: 6px;
+}
+
+.authbox form,
+.register-page form {
+    display: grid;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.authbox label,
+.register-page label {
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+.authbox input,
+.register-page input {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    background: #0e0e0e;
+    color: #fff;
+    border: 1px solid var(--bd);
+    border-radius: 4px;
+}
+
+.authbox button,
+.register-page button.primary {
+    min-height: 45px;
+    border: 0;
+    border-radius: 4px;
+    background: var(--r);
+    color: #fff;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.back {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #aaa;
+}
+
+.register {
+    margin-top: 22px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.register a,
+.authbox a:not(.back) {
+    color: #fff;
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.terms input {
+    width: auto;
+    min-height: auto;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.row label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0;
+    font-weight: normal;
+}
+
+.row input {
+    width: auto;
+    min-height: auto;
+}
+
+/* ==========================================================================
+   4. HOME / HERO PAGE (index.html)
+   ========================================================================== */
+
+.hero {
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+}
+
+.hero section {
+    max-width: 720px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 8vw, 86px);
+    line-height: 0.95;
+    text-transform: uppercase;
+    margin: 12px 0 24px;
+}
+
+.hero h1 span {
+    color: var(--r);
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.home-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding-bottom: 60px;
+}
+
+.home-cards .card {
+    background: var(--card);
+    border: 1px solid var(--bd);
+    padding: 28px;
+    min-height: 170px;
+}
+
+.home-cards .card h2 {
+    margin: 10px 0;
+}
+
+/* ==========================================================================
+   5. MARKETPLACE / ANÚNCIOS LIST (anuncios.html)
+   ========================================================================== */
+
+.top {
+    padding: 50px 0 30px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.search {
+    background: #fff;
+    border: 1px solid #ddd8d0;
+    border-radius: 9px;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.search button {
+    border: none;
+    background: #171717;
+    color: #fff;
+    padding: 0 22px;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+.search button:hover {
+    background: #a2763f;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    gap: 30px;
+    padding-bottom: 70px;
+}
+
+aside {
+    background: #fff;
+    border: 1px solid #ddd8d0;
+    border-radius: 9px;
+    padding: 22px;
+    height: fit-content;
+}
+
+aside h3 {
+    margin-bottom: 22px;
+}
+
+aside label {
+    display: block;
+    font-size: 12px;
+    font-weight: 800;
+    margin: 20px 0 10px;
+    color: #555;
+}
+
+aside p {
+    color: #666;
+    margin: 8px 0;
+}
+
+aside input {
+    width: 100%;
+}
+
+.resulthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.resulthead select {
+    padding: 9px 12px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd8d0;
+    border-radius: 9px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.photo {
+    height: 180px;
+    background: #292929;
+    color: #c99a55;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.info {
+    padding: 20px;
+}
+
+.info > span {
+    color: #a2763f;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.info h2 {
+    font-size: 18px;
+    line-height: 1.3;
+    margin: 9px 0;
+}
+
+.info p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.info strong {
+    display: block;
+    font-size: 21px;
+    margin-bottom: 16px;
+}
+
+.info a {
+    color: #a2763f;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   6. ANÚNCIO DETALHES (anuncio.html)
+   ========================================================================== */
+
+.back-link {
+    display: inline-block;
+    margin: 35px 0 25px;
+    color: #777;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    color: #a2763f;
+}
+
+.detail {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 45px;
+    padding-bottom: 70px;
+}
+
+.mainphoto {
+    height: 480px;
+    border-radius: 10px;
+    background: #292929;
+    color: #c99a55;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 4px;
+}
+
+.thumbs {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.thumbs i {
+    width: 75px;
+    height: 65px;
+    border-radius: 6px;
+    background: #292929;
+    color: #c99a55;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: normal;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.data {
+    padding-top: 15px;
+}
+
+.tag {
+    display: inline-block;
+    background: #171717;
+    color: #c99a55;
+    padding: 7px 12px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.data h1 {
+    font-size: 39px;
+    line-height: 1.12;
+    margin: 18px 0 15px;
+}
+
+.price {
+    font-size: 34px;
+    font-weight: 900;
+    margin: 25px 0;
+}
+
+.specs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 28px 0;
+}
+
+.specs div {
+    background: #fff;
+    border: 1px solid #ddd8d0;
+    border-radius: 7px;
+    padding: 15px;
+}
+
+.specs small {
+    display: block;
+    color: #888;
+    font-size: 10px;
+    margin-bottom: 7px;
+}
+
+.specs b {
+    font-size: 14px;
+}
+
+.seller {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid #ddd8d0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #292929;
+    color: #c99a55;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+.seller small,
+.seller b,
+.seller span {
+    display: block;
+}
+
+.seller small {
+    color: #888;
+    margin-bottom: 3px;
+}
+
+.seller span {
+    color: #777;
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+/* ==========================================================================
+   7. PUBLICAR ANÚNCIO (publicar-anuncio.html)
+   ========================================================================== */
+
+.publish {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 24px;
+    padding-bottom: 60px;
+}
+
+.publish textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* ==========================================================================
+   8. MEUS VEÍCULOS (veiculos.html)
+   ========================================================================== */
+
+.vehicles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.vehicle {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    min-height: 220px;
+    transition: 0.2s;
+}
+
+.vehicle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.vehiclephoto {
+    width: 40%;
+    min-height: 220px;
+    background-color: #222;
+    color: #d6a84f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   9. ALERTAS (alertas.html)
+   ========================================================================== */
+
+.alerts {
+    display: grid;
+    gap: 14px;
+    max-width: 900px;
+}
+
+.alerts article {
+    background: #fff;
+    border: 1px solid #ddd8d0;
+    border-radius: 9px;
+    padding: 22px;
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    align-items: center;
+    gap: 18px;
+}
+
+.alerts .icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #171717;
+    color: #c99a55;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.alerts article span {
+    color: #a2763f;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.alerts article h2 {
+    font-size: 20px;
+    margin: 6px 0;
+}
+
+.alerts article p {
+    color: #777;
+    font-size: 14px;
+}
+
+.alerts article button {
+    background: transparent;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    padding: 10px 15px;
+    color: #555;
+}
+
+.alerts article button:hover {
+    border-color: #171717;
+    color: #171717;
+}
+
+.create {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 13px 18px;
+    border-radius: 6px;
+    background: #171717;
+    color: #fff;
+    font-weight: 700;
+}
+
+.create:hover {
+    background: #a2763f;
+}
+
+/* ==========================================================================
+   10. CHAT / NEGOCIAÇÃO (chat.html)
+   ========================================================================== */
+
+.chat-container {
+    max-width: 1250px;
+    height: 100vh;
+    margin: auto;
+    padding: 25px;
+}
+
+.chatpage {
+    height: calc(100vh - 50px);
+    background: #fff;
+    border: 1px solid #ddd8d0;
+    border-radius: 10px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 310px 1fr;
+}
+
+.chatpage aside {
+    border-right: 1px solid #ddd8d0;
+    background: #faf9f7;
+    padding: 0;
+}
+
+.chatpage aside h2 {
+    padding: 25px;
+    border-bottom: 1px solid #ddd8d0;
+    font-size: 20px;
+}
+
+.conversation {
+    padding: 18px 20px;
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.conversation:hover,
+.conversation.active {
+    background: #eeeae4;
+}
+
+.conversation b,
+.conversation span {
+    display: block;
+}
+
+.conversation b {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.conversation span {
+    color: #888;
+    font-size: 12px;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.chathead {
+    padding: 18px 24px;
+    border-bottom: 1px solid #ddd8d0;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.chathead b,
+.chathead span {
+    display: block;
+}
+
+.chathead b {
+    margin-bottom: 4px;
+}
+
+.chathead span {
+    color: #888;
+    font-size: 12px;
+}
+
+.messages {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.messages p {
+    max-width: 65%;
+    padding: 13px 16px;
+    border-radius: 10px;
+    line-height: 1.5;
+    font-size: 14px;
+    position: relative;
+}
+
+.messages small {
+    display: block;
+    margin-top: 5px;
+    font-size: 10px;
+    opacity: 0.6;
+}
+
+.received {
+    align-self: flex-start;
+    background: #eeeae4;
+}
+
+.sent {
+    align-self: flex-end;
+    background: #171717;
+    color: #fff;
+}
+
+.composer {
+    padding: 18px;
+    border-top: 1px solid #ddd8d0;
+    display: flex;
+    gap: 10px;
+}
+
+.composer input {
+    flex: 1;
+    border: 1px solid #d5d0c8;
+    border-radius: 6px;
+    padding: 13px;
+    outline: none;
+}
+
+.composer button {
+    border: none;
+    border-radius: 6px;
+    padding: 0 24px;
+    background: #171717;
+    color: #fff;
+    font-weight: 700;
+}
+
+.composer button:hover {
+    background: #a2763f;
+}
+
+/* ==========================================================================
+   11. MEU PERFIL (perfil.html)
+   ========================================================================== */
+
+.profilehead {
+    margin: 50px 0 30px;
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #ddd8d0;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    align-items: center;
+    gap: 20px;
+}
+
+.avatar.big {
+    width: 80px;
+    height: 80px;
+    font-size: 25px;
+    background: #292929;
+    color: #c99a55;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+}
+
+.profilehead h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.profilehead button {
+    border: 1px solid #171717;
+    background: transparent;
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.profilehead button:hover {
+    background: #171717;
+    color: #fff;
+}
+
+.profilegrid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 25px;
+    padding-bottom: 70px;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.stats > div {
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.stats > div:last-child {
+    border-bottom: none;
+}
+
+.stats b {
+    display: block;
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.stats span {
+    color: #777;
+    font-size: 13px;
+}
+
+/* ==========================================================================
+   12. BACKEND / GLASSMORPHISM / ADMIN SYSTEM (style.css)
+   ========================================================================== */
+
+/* Navbar GLASS */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 18px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.conteudo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.conteudo h2 {
+    margin-bottom: 12px;
+}
+
+.conteudo > p {
+    margin-bottom: 20px;
+    max-width: 480px;
+}
+
+.rodape {
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 18px;
+    text-align: center;
+}
+
+/* Formulário Glassmorphism */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    width: 340px;
+    gap: 16px;
+    background: transparent;
+    border: solid 2px #ededed;
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    padding: 30px 40px;
+    text-align: left;
+}
+
+.formulario label {
+    font-size: 0.85rem;
+    color: #f1f4f8;
+}
+
+.formulario input {
+    width: 100%;
+    padding: 12px 14px;
+    background: transparent;
+    border: 2px solid #ddd8d8;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #fff;
+    outline: none;
+}
+
+.formulario input::placeholder {
+    color: #dfe3e8;
+}
+
+.formulario button {
+    margin-top: 8px;
+    border-color: #fff;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+.input-container input {
+    padding-right: 45px;
+}
+
+.input-container img {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+}
+
+.input-container a {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: #dfe3e8;
+}
+
+body.pagina-admin {
+    display: block;
+    padding: 50px 20px;
+}
+
+.painel {
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.06);
+    border: 2px solid #ededed;
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    padding: 34px 40px;
+}
+
+.painel h1 {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.total-usuarios {
+    text-align: center;
+    color: #dfe3e8;
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+}
+
+.tabela-usuarios {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 28px;
+}
+
+.tabela-usuarios th,
+.tabela-usuarios td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 0.92rem;
+}
+
+.tabela-usuarios th {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.72rem;
+    color: #dfe3e8;
+}
+
+.tabela-usuarios tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tabela-usuarios .acoes a {
+    color: #fff;
+    text-decoration: underline;
+    margin-right: 8px;
+}
+
+.tabela-usuarios .acoes form {
+    display: inline;
+}
+
+.btn-excluir {
+    background: transparent;
+    border: 2px solid #e58a8a;
+    color: #ffd9d9;
+    padding: 6px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.2s ease;
+}
+
+.btn-excluir:hover {
+    background: rgba(229, 138, 138, 0.2);
+}
+
+.ficha {
+    max-width: 420px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.06);
+    border: 2px solid #ededed;
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    padding: 32px 40px;
+    text-align: center;
+}
+
+.ficha h1 {
+    margin-bottom: 18px;
+}
+
+.ficha p {
+    margin: 10px 0;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.ficha p strong {
+    color: #dfe3e8;
+    font-weight: 600;
+    margin-right: 6px;
+}
+
+.ficha .voltar {
+    margin-top: 22px;
+}
+
+.ficha.nao-encontrado p {
+    text-align: center;
+    color: #ffd9d9;
+}
+
+/* ==========================================================================
+   13. MEDIA QUERIES (RESPONSIVIDADE UNIFICADA)
+   ========================================================================== */
+
+@media (max-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .search {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .search button {
+        padding: 13px;
+    }
+}
+
+@media (max-width: 800px) {
+    .detail {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .mainphoto {
+        height: 350px;
+    }
+
+    .data h1 {
+        font-size: 31px;
+    }
+
+    .profilehead {
+        grid-template-columns: 70px 1fr;
+    }
+
+    .profilehead button {
+        grid-column: 1 / -1;
+    }
+
+    .profilegrid {
+        grid-template-columns: 1fr;
+    }
+
+    .publish {
+        grid-template-columns: 1fr;
+    }
+
+    .vehicles {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 750px) {
+    .auth,
+    .register-page {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 40px 0;
+    }
+
+    .auth h1,
+    .register-page h1 {
+        font-size: 40px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .header .wrap {
+        flex-direction: column;
+        gap: 18px;
+        padding: 20px 24px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .alerts article {
+        grid-template-columns: 48px 1fr;
+    }
+
+    .alerts article button {
+        grid-column: 2;
+        justify-self: start;
+    }
+
+    .chat-container {
+        padding: 0;
+    }
+
+    .chatpage {
+        height: 100vh;
+        border-radius: 0;
+        grid-template-columns: 1fr;
+    }
+
+    .chatpage aside {
+        display: none;
+    }
+
+    .messages p {
+        max-width: 85%;
+    }
+}
+
+@media (max-width: 550px) {
+    .search {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .profilehead {
+        padding: 22px;
+    }
+
+    .profilehead h1 {
+        font-size: 25px;
+    }
+
+    .vehicle {
+        flex-direction: column;
+    }
+
+    .vehiclephoto {
+        width: 100%;
+        min-height: 150px;
+    }
+
+    .info {
+        padding: 25px;
+    }
+}
