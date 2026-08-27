@@ -2,25 +2,107 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Área do Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Iron Legacy - Painel Admin</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="adm-body">
+    <header class="header adm-header">
+        <div class="wrap flex-between">
+            <a class="logo" href="/">THE IRON <span>LEGACY</span> <small class="badge-adm">ADMIN</small></a>
+            <div class="actions">
+                <a href="/" class="button secondary sm">Sair do Painel</a>
+            </div>
+        </div>
+    </header>
 
-    <nav class="navbar">
-        <h1>Área do Admin</h1>
+    <main class="wrap main-adm">
+        <section class="adm-top">
+            <div>
+                <p class="eyebrow">GERENCIAMENTO</p>
+                <h2>Painel Administrativo</h2>
+                <p class="muted">Visão geral do sistema e controle de registros (CRUD).</p>
+            </div>
+            <button class="button primary sm">+ Novo Usuário</button>
+        </section>
 
-        <a href="/">
-            <button>Início</button>
-        </a>
-    </nav>
+        <section class="adm-grid">
+            <div class="adm-card">
+                <div class="adm-card-header">
+                    <h3>Usuários Cadastrados</h3>
+                    <span class="adm-card-icon">👥</span>
+                </div>
+                <span class="stat-number">128</span>
+                <span class="stat-trend positive">+12% este mês</span>
+            </div>
+            <div class="adm-card">
+                <div class="adm-card-header">
+                    <h3>Anúncios Ativos</h3>
+                    <span class="adm-card-icon">📢</span>
+                </div>
+                <span class="stat-number">45</span>
+                <span class="stat-trend positive">+5 novos hoje</span>
+            </div>
+            <div class="adm-card">
+                <div class="adm-card-header">
+                    <h3>Veículos na Garagem</h3>
+                    <span class="adm-card-icon">🚗</span>
+                </div>
+                <span class="stat-number">89</span>
+                <span class="stat-trend neutral">Estável</span>
+            </div>
+        </section>
 
-    <main class="conteudo">
-        <h2>Painel Administrativo</h2>
-        <p>Por enquanto, esta é apenas uma página simples do administrador.</p>
-
-        <p>Depois vamos colocar aqui o CRUD.</p>
+        <section class="panel adm-table-container">
+            <div class="table-header">
+                <h3>Lista de Usuários</h3>
+                <div class="table-actions">
+                    <input type="text" placeholder="Buscar usuário..." class="table-search">
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="adm-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Telefone</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#1</td>
+                            <td>
+                                <strong>Administrador</strong>
+                            </td>
+                            <td>admin@ironlegacy.com</td>
+                            <td>(00) 99999-9999</td>
+                            <td><span class="status-badge active">Ativo</span></td>
+                            <td class="table-buttons">
+                                <button class="button sm secondary">Editar</button>
+                                <button class="button sm danger">Excluir</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#2</td>
+                            <td>
+                                <strong>Carlos Silva</strong>
+                            </td>
+                            <td>carlos@email.com</td>
+                            <td>(11) 98765-4321</td>
+                            <td><span class="status-badge active">Ativo</span></td>
+                            <td class="table-buttons">
+                                <button class="button sm secondary">Editar</button>
+                                <button class="button sm danger">Excluir</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
-
 </body>
 </html>

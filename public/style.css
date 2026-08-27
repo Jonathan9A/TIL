@@ -1403,3 +1403,196 @@ body.pagina-admin {
         padding: 25px;
     }
 }
+
+/* ==========================================================================
+   14. PAINEL ADMINISTRATIVO (adm.html)
+   ========================================================================== */
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.badge-adm {
+    background: var(--r);
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin-left: 6px;
+    letter-spacing: 1px;
+}
+
+.button.sm {
+    padding: 8px 14px;
+    font-size: 13px;
+}
+
+.button.danger {
+    background: #dc3545;
+    color: #fff;
+}
+
+.button.danger:hover {
+    background: #bd2130;
+}
+
+.main-adm {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.adm-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+
+/* Grid de Cards */
+.adm-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.adm-card {
+    background: #fff;
+    border: 1px solid #ddd8d0;
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.adm-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.adm-card h3 {
+    font-size: 14px;
+    color: #666;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.adm-card-icon {
+    font-size: 20px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 36px;
+    font-weight: 900;
+    color: #171717;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.stat-trend {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.stat-trend.positive {
+    color: #2e7d32;
+}
+
+.stat-trend.neutral {
+    color: #757575;
+}
+
+/* Tabela Admin */
+.adm-table-container {
+    padding: 24px;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.table-search {
+    padding: 8px 12px;
+    font-size: 13px;
+    width: 240px;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.adm-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.adm-table th {
+    background: #faf9f7;
+    color: #555;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 14px 16px;
+    border-bottom: 2px solid #eee;
+}
+
+.adm-table td {
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.adm-table tr:hover {
+    background-color: #faf9f7;
+}
+
+.table-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.status-badge.active {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+@media (max-width: 700px) {
+    .adm-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .table-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .table-search {
+        width: 100%;
+    }
+}
